@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header / Hero */
+header {
+  background: #1a3da6;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #1a3da6;
+}
+
+/* Gallery Section */
+.gallery-images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* allow wrapping */
+}
+
+.gallery-images img {
+  width: 30%; /* desktop: 3 per row */
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.05);
+}
+
+/* -------- Responsive Design -------- */
+
+/* Tablet (2 per row) */
+@media (max-width: 900px) {
+  .gallery-images img {
+    width: 45%;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile (1 per row + stacked nav) */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+  .gallery-images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery-images img {
+    width: 80%;
+  }
+  section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Container centers everything */
+.favorites-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center; /* center horizontally */
+  gap: 15px; /* space between boxes */
+  margin-top: 20px;
+}
+
+/* Each favorite looks like a card */
+.favorite-item {
+  background-color: #f9f9ff;
+  border-left: 5px solid #e63946; /* colored stripe like your example */
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  width: 90%; /* responsive */
+  max-width: 600px; /* limit size */
+}
+
+.info-box {
+  background-color: #f8f8ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 20px auto; /* <-- centers the box */
+  text-align: center; /* <-- centers text inside */
+}
+
+#video {
+  text-align: center;
+  margin: 2em auto;
+}
+
+#video video, 
+#video iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
